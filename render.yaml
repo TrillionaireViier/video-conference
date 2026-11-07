@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: video-conference-signaling
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: CORS_ORIGIN
+        value: https://video-conference-theta.vercel.app
